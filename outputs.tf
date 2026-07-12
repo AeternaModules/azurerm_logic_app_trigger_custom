@@ -1,3 +1,7 @@
+output "logic_app_trigger_customs_id" {
+  description = "Map of id values across all logic_app_trigger_customs, keyed the same as var.logic_app_trigger_customs"
+  value       = { for k, v in azurerm_logic_app_trigger_custom.logic_app_trigger_customs : k => v.id }
+}
 output "logic_app_trigger_customs_body" {
   description = "Map of body values across all logic_app_trigger_customs, keyed the same as var.logic_app_trigger_customs"
   value       = { for k, v in azurerm_logic_app_trigger_custom.logic_app_trigger_customs : k => v.body }
